@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int startingHealth;
+    [SerializeField] private float startingHealth;
     [SerializeField] private Animator playerAnimator;
     private bool dead;
-    public int currentHealth;
+    public float currentHealth;
 
     private void Awake()
     {
