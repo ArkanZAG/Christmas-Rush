@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
         
     }
 
-    private void TakingDamage(int damage)
+    public void TakingDamage(int damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
         
