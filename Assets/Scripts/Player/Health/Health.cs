@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int startingHealth;
     [SerializeField] private Animator playerAnimator;
     private bool dead;
-    private int currentHealth;
+    public int currentHealth;
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
         {
             playerAnimator.SetTrigger("Damaged");
         }
-        else
+        else if (currentHealth == 0)
         {
             if (!dead)
             {
