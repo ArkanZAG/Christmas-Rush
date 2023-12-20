@@ -8,6 +8,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Environment/SlipperyPlatform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Health/Health.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Health/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -88,6 +90,7 @@
       <workItem from="1702868417456" duration="5525000" />
       <workItem from="1702970770775" duration="4787000" />
       <workItem from="1702988694174" duration="678000" />
+      <workItem from="1703045673905" duration="8319000" />
     </task>
     <servers />
   </component>

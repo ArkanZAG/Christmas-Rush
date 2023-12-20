@@ -8,14 +8,11 @@ public class PlayerMechanic : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D playerRigidBody;
     [SerializeField] private int playerMoveSpeed;
-    [SerializeField] private int playerJumpHeight;
+    [SerializeField] private float playerJumpHeight;
     [SerializeField] private Animator playerAnimator;
+    private int jumpCounter;
     private bool isGrounded;
-    void Start()
-    {
-        
-    }
-    
+
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -31,19 +28,34 @@ public class PlayerMechanic : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            if (isGrounded)
+            {
+                Jump();
+                jumpCounter = 1;
+                isGrounded = false;
+            }
+            else if (jumpCounter == 1)
+            {
+                DoubleJump();
+                jumpCounter = 2;
+            }
         }
 
         playerAnimator.SetBool("Run", horizontalInput != 0);
         playerAnimator.SetBool("isGrounded", isGrounded);
+        playerAnimator.SetBool("DoubleJump", isGrounded);
     }
 
     private void Jump()
     {
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight);
-        isGrounded = false;
+    }
+
+    private void DoubleJump()
+    {
+        playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight / 0.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -52,5 +64,10 @@ public class PlayerMechanic : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+
+    public Rigidbody2D GetPlayerRigidBody2D()
+    {
+        return playerRigidBody;
     }
 }
