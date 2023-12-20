@@ -28,24 +28,14 @@ public class PlayerMechanic : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            if (isGrounded)
-            {
-                Jump();
-                jumpCounter = 1;
-                isGrounded = false;
-            }
-            else if (jumpCounter == 1)
-            {
-                DoubleJump();
-                jumpCounter = 2;
-            }
+            Jump();
         }
 
         playerAnimator.SetBool("Run", horizontalInput != 0);
         playerAnimator.SetBool("isGrounded", isGrounded);
-        playerAnimator.SetBool("DoubleJump", isGrounded);
+        // playerAnimator.SetBool("DoubleJump", isGrounded);
     }
 
     private void Jump()
