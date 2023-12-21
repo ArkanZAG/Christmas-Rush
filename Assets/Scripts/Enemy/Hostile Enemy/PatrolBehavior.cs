@@ -9,11 +9,13 @@ public class PatrolBehavior : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Transform currentPoint;
     public float speed;
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         currentPoint = RightPoint.transform;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,10 +30,12 @@ public class PatrolBehavior : MonoBehaviour
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == RightPoint.transform) {
             currentPoint = LeftPoint.transform;
+            spriteRenderer.flipX = true;
         }
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == LeftPoint.transform) {
             currentPoint = RightPoint.transform;
+            spriteRenderer.flipX = false;
         }
     }
 }

@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.collider.name == "Player")
+        if (col.tag == "Player")
         {
-            col.collider.GetComponent<Health>().TakingDamage(1);
+            col.GetComponent<Health>().TakingDamage(1);
         }
     }
 }
