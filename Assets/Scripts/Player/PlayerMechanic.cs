@@ -35,12 +35,12 @@ public class PlayerMechanic : MonoBehaviour
 
         playerAnimator.SetBool("Run", horizontalInput != 0);
         playerAnimator.SetBool("isGrounded", isGrounded);
-        // playerAnimator.SetBool("DoubleJump", isGrounded);
     }
 
     private void Jump()
     {
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight);
+        isGrounded = false;
     }
 
     private void DoubleJump()
