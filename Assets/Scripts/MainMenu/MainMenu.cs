@@ -25,4 +25,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public GameObject GetMainMenuScreen()
+    {
+        return mainMenuScreen;
+    }
 }

@@ -11,17 +11,14 @@ namespace Player.Health
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip audioClip;
         [SerializeField] private GameObject visual;
-        [SerializeField] private global::Health health;
-        
-        private void OnCollisionEnter2D(Collision2D col)
+        [SerializeField] private global::Health playerHealth;
+
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            
-            if (col.gameObject.tag == "Player" && health.currentHealth != health.GetMaxHealth())
+            if (col.gameObject.tag == "Player" && playerHealth.GetCurrentHealth() != playerHealth.GetMaxHealth())
             {
-                Debug.Log("Audio will be play");
                 audioSource.clip = audioClip;
                 audioSource.Play();
-                Debug.Log("Audio Played");
                 col.gameObject.GetComponent<global::Health>().Healing(healthValue);
                 visual.SetActive(false);
 
