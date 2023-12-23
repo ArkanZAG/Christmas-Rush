@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InGameMenu : MonoBehaviour
@@ -10,27 +12,35 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] private Button menuButton;
     [SerializeField] private Button restartButton;
     [SerializeField] private GameObject inGameMenuGameObject;
-    [SerializeField] private MainMenu mainMenu;
+    [SerializeField] private String mainMenuScene = "MainMenu";
+    [SerializeField] private TextMeshProUGUI counterText;
 
     private void Start()
     {
-        sideMenuButton.onClick.AddListener(ShowSideMenuScree);
-        menuButton.onClick.AddListener(MenuButton);
+        sideMenuButton.onClick.AddListener(ShowSideMenuScreen);
+        menuButton.onClick.AddListener(MainMenuScene);
         restartButton.onClick.AddListener(RestratButton);
     }
 
-    private void ShowSideMenuScree()
+    private void ShowSideMenuScreen()
     {
         inGameMenuGameObject.SetActive(true);
+    }
+
+    private void MainMenuScene()
+    {
+        SceneManager.LoadScene(mainMenuScene);
     }
 
     private void RestratButton()
     {
         
     }
-
-    private void MenuButton()
+    
+    public void AddValueToCounter(int score)
     {
-        mainMenu.GetMainMenuScreen().SetActive(true);
+        int currentValue = int.Parse(counterText.text);
+        currentValue = currentValue + score;
+        counterText.text = currentValue.ToString();
     }
 }

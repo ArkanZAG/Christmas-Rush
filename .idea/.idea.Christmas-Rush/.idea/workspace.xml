@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Collectible/CollectibleItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DeathScreen/DeathScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Environment/SlipperyPlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameMenu/InGameMenu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -97,6 +98,7 @@
       <workItem from="1703139637253" duration="9942000" />
       <workItem from="1703246234052" duration="7940000" />
       <workItem from="1703309559777" duration="876000" />
+      <workItem from="1703321651346" duration="4740000" />
     </task>
     <servers />
   </component>
