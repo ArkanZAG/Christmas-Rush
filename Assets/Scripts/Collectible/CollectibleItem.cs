@@ -20,6 +20,13 @@ public class CollectibleItem : MonoBehaviour
             audioSource.Play();
             inGameMenu.AddValueToCounter(1);
             visual.SetActive(false);
+            
+            Collider2D coll = GetComponent<Collider2D>();
+
+            if (coll != null)
+            {
+                coll.enabled = false;
+            }
         }
     }
 }
