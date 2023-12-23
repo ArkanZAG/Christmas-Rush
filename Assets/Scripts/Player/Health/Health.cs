@@ -28,9 +28,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            StartCoroutine(Invulnerability());
             playerAnimator.SetTrigger("Damaged");
-            StopCoroutine(Invulnerability());
         }
         else if (currentHealth == 0)
         {
