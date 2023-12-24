@@ -65,6 +65,7 @@ public class PlayerMechanic : MonoBehaviour
     private void DoubleJump()
     {
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight / 0.5f);
+        isGrounded = false;
         playerAudio.GetComponent<PlayerAudio>().playDoubleJumpSound();
     }
 
