@@ -14,6 +14,7 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] private Button closeButton;
     [SerializeField] private GameObject inGameMenuGameObject;
     [SerializeField] private String mainMenuScene = "MainMenu";
+    [SerializeField] private String inGameScene = "SampleScene";
     [SerializeField] private TextMeshProUGUI counterText;
 
     private void Start()
@@ -43,7 +44,7 @@ public class InGameMenu : MonoBehaviour
 
     private void RestratButton()
     {
-        
+        SceneManager.LoadScene(inGameScene);
     }
     
     public void AddValueToCounter(int score)
@@ -51,5 +52,10 @@ public class InGameMenu : MonoBehaviour
         int currentValue = int.Parse(counterText.text);
         currentValue = currentValue + score;
         counterText.text = currentValue.ToString();
+    }
+
+    public TextMeshProUGUI GetCounterText()
+    {
+        return counterText;
     }
 }

@@ -28,7 +28,7 @@ public class PlayerMechanic : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }

@@ -12,6 +12,7 @@ public class GameOverScreen : MonoBehaviour
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private GameObject gameObject;
     [SerializeField] private string mainMenuScene = "MainMenu";
+    [SerializeField] private string inGameScene = "SampleScene";
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void ShowGameOverScreen()
     {
+        Debug.Log("Dead");
         gameObject.SetActive(true);
     }
 
@@ -31,6 +33,6 @@ public class GameOverScreen : MonoBehaviour
 
     private void RestartGame()
     {
-        
+        SceneManager.LoadScene(inGameScene);
     }
 }
