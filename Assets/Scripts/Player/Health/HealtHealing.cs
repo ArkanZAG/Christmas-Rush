@@ -11,24 +11,22 @@ namespace Player.Health
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip audioClip;
         [SerializeField] private GameObject visual;
-        [SerializeField] private global::Health playerHealth;
+        [SerializeField] private Collider2D boxCollider;
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.gameObject.tag == "Player" && playerHealth.GetCurrentHealth() != playerHealth.GetMaxHealth())
-            {
-                audioSource.clip = audioClip;
-                audioSource.Play();
-                col.gameObject.GetComponent<global::Health>().Healing(healthValue);
-                visual.SetActive(false);
-
-                Collider2D coll = GetComponent<Collider2D>();
-
-                if (coll != null)
-                {
-                    coll.enabled = false;
-                }
-            }
+            PlayerMechanic player = col.gameObject.GetComponent<PlayerMechanic>();
+            if (player == null) return;
+            
+            HealthComponent playerHealth = col.gameObject.GetComponent<HealthComponent>();
+            if (playerHealth == null) return;
+            
+            if (!playerHealth.CanHeal()) return;
+            audioSource.clip = audioClip;
+            audioSource.Play();
+            playerHealth.Healing(healthValue);
+            visual.SetActive(false);
+            boxCollider.enabled = false;
         }
     }
 }

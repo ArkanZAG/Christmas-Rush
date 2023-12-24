@@ -46,16 +46,9 @@ public class InGameMenu : MonoBehaviour
     {
         SceneManager.LoadScene(inGameScene);
     }
-    
-    public void AddValueToCounter(int score)
-    {
-        int currentValue = int.Parse(counterText.text);
-        currentValue = currentValue + score;
-        counterText.text = currentValue.ToString();
-    }
 
-    public TextMeshProUGUI GetCounterText()
+    public void UpdateScoreText(int score)
     {
-        return counterText;
+        counterText.text = score.ToString();
     }
 }

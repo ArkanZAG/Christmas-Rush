@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
+using Collectible;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,36 +11,22 @@ public class CollectibleItem : MonoBehaviour
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private GameObject visual;
-    [SerializeField] private InGameMenu inGameMenu;
-    [SerializeField] private VictoryScreen victoryScreen;
+    [SerializeField] private Collider2D boxCollider;
+    [SerializeField] private ScoreController score;
 
-    private void OnTriggerEnter2D(Collider2D col)
+    public void Initialize(ScoreController scoreController)
     {
-        if (col.gameObject.tag == "Player")
-        {
-            audioSource.clip = audioClip;
-            audioSource.Play();
-            inGameMenu.AddValueToCounter(1);
-            visual.SetActive(false);
-            VictoryCondition();
-            Collider2D coll = GetComponent<Collider2D>();
-
-            if (coll != null)
-            {
-                coll.enabled = false;
-            }
-            
-        }
+        score = scoreController;
     }
     
-    public void VictoryCondition()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Menang!");
-        int counterValue = int.Parse(inGameMenu.GetCounterText().text);
-        if (counterValue == 6)
-        {
-            victoryScreen.ShowVitoryScreen();
-        }
+        if (col.gameObject.tag != "Player") return;
         
+        audioSource.clip = audioClip;
+        audioSource.Play();
+        score.AddScore(1);
+        visual.SetActive(false);
+        boxCollider.enabled = false;
     }
 }

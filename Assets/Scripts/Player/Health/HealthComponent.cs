@@ -6,16 +6,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.U2D;
 
-public class Health : MonoBehaviour
+public class HealthComponent : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private int numberofFlashes;
-    [SerializeField] private int iFramesDuration;
+    [SerializeField] private float iFramesDuration;
     [SerializeField] private float currentHealth;
     [SerializeField] private GameOverScreen gameOverScreen;
-    private SpriteRenderer spriteRend;
+    [SerializeField] private SpriteRenderer spriteRend;
     private bool dead;
+    private bool isInvulnerable = false;
     public GameObject playerAudio;
     
 
@@ -26,12 +27,15 @@ public class Health : MonoBehaviour
 
     public void TakingDamage(int damage)
     {
+        if (isInvulnerable) return;
+        
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
         playerAudio.GetComponent<PlayerAudio>().playDamageSound();
 
         if (currentHealth > 0)
         {
             playerAnimator.SetTrigger("Damaged");
+            StartCoroutine(Invulnerability());
         }
         else if (currentHealth == 0)
         {
@@ -61,9 +65,14 @@ public class Health : MonoBehaviour
         return currentHealth;
     }
 
+    public bool CanHeal()
+    {
+        return GetCurrentHealth() < GetMaxHealth();
+    }
+
     private IEnumerator Invulnerability()
     {
-        Physics2D.IgnoreLayerCollision(6,7,true);
+        isInvulnerable = true;
     
         for (int i = 0; i < numberofFlashes; i++)
         {
@@ -73,6 +82,6 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberofFlashes * 2));
         }
         
-        Physics2D.IgnoreLayerCollision(6, 7, false);
+        isInvulnerable = false;
     }
 }

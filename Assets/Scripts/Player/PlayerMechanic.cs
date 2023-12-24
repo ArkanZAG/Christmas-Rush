@@ -13,14 +13,14 @@ public class PlayerMechanic : MonoBehaviour
     private int jumpCounter;
     private bool isGrounded;
     private bool isWalking = false;
-    public GameObject playerAudio;
+    public PlayerAudio playerAudio;
 
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         
         playerRigidBody.velocity = new Vector2(horizontalInput * playerMoveSpeed, playerRigidBody.velocity.y);
-        isWalking = false;
+        /*isWalking = false;
         if (horizontalInput > 0.01f)
         {
             isWalking = true;
@@ -36,17 +36,33 @@ public class PlayerMechanic : MonoBehaviour
             if (!playerAudio.GetComponent<PlayerAudio>().FootstepSound.isPlaying && isGrounded) {
                 playerAudio.GetComponent<PlayerAudio>().playFootstepSound();
             }
+        }*/
+
+        isWalking = Mathf.Abs(horizontalInput) > 0f;
+        if (isWalking)
+        {
+            float direction = horizontalInput > 0f ? 1f : -1f;
+
+            transform.localScale = new Vector3(direction, 1f, 1f);
+            if (!playerAudio.FootstepSound.isPlaying && isGrounded) {
+                playerAudio.playFootstepSound();
+            }
+        }
+        else
+        {
+            playerAudio.stopFootstepSound();
         }
 
-        if (!isWalking) {
+        /*if (!isWalking) {
             playerAudio.GetComponent<PlayerAudio>().stopFootstepSound();
-        }
+        }*/
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isGrounded) {
+            jumpCounter++;
+            if (jumpCounter == 1) {
                 Jump();
-            } else {
+            } else if (jumpCounter == 2) {
                 DoubleJump();
             }
         }
@@ -59,21 +75,25 @@ public class PlayerMechanic : MonoBehaviour
     {
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight);
         isGrounded = false;
-        playerAudio.GetComponent<PlayerAudio>().playJumpSound();
+        playerAudio.playJumpSound();
     }
 
     private void DoubleJump()
     {
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight / 0.5f);
         isGrounded = false;
-        playerAudio.GetComponent<PlayerAudio>().playDoubleJumpSound();
+        playerAudio.playDoubleJumpSound();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Ground")
         {
+            var platformY = col.transform.position.y;
+            var playerY = transform.position.y;
+            if (playerY < platformY) return;
             isGrounded = true;
+            jumpCounter = 0;
         }
     }
 

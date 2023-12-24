@@ -14,38 +14,17 @@ public class VictoryScreen : MonoBehaviour
     [SerializeField] private GameObject gameObject;
     [SerializeField] private string mainMenuScene = "MainMenu";
     [SerializeField] private string inGameScene = "SampleScene";
-    [SerializeField] private InGameMenu inGameMenu;
 
     private void Start()
     {
+        gameObject.SetActive(false);
         restartButton.onClick.AddListener(RestartGame);
         mainMenuButton.onClick.AddListener(LoadMainMenuScreen);
     }
 
-    // private void OnTriggerEnter2D(Collider2D col)
-    // {
-    //     if (col.CompareTag("Player"))
-    //     {
-    //         VictoryCondition();
-    //     }
-    // }
-
-    // public void VictoryCondition()
-    // {
-    //     Debug.Log("Menang!");
-    //     TextMeshProUGUI counter = inGameMenu.GetCounterText();
-    //     int counterValue;
-    //     if (int.TryParse(counter.text, out counterValue))
-    //     {
-    //         if (counterValue == 6)
-    //         {
-    //             ShowVitoryScreen();
-    //         }
-    //     }
-    // }
-
-    public void ShowVitoryScreen()
+    public void ShowVictoryScreen()
     {
+        Debug.Log("TEST");
         gameObject.SetActive(true);
     }
 

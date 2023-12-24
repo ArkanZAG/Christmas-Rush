@@ -51,7 +51,7 @@ MonoBehaviour:
   audioSource: {fileID: 3372887051894805071}
   audioClip: {fileID: 8300000, guid: 9ea896409c3d82c4e996f977d5d67e17, type: 3}
   visual: {fileID: 2532019496513745597}
-  playerHealth: {fileID: 0}
+  boxCollider: {fileID: 824617749647232670}
 --- !u!61 &824617749647232670
 BoxCollider2D:
   m_ObjectHideFlags: 0
