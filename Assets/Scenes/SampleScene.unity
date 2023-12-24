@@ -11096,7 +11096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 1904375210}
   playerMoveSpeed: 5
-  playerJumpHeight: 25
+  playerJumpHeight: 15
   playerAnimator: {fileID: 1904375214}
   playerAudio: {fileID: 1480123896}
 --- !u!95 &1904375214
