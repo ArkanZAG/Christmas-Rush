@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     [SerializeField] private GameOverScreen gameOverScreen;
     private SpriteRenderer spriteRend;
     private bool dead;
+    public GameObject playerAudio;
     
 
     private void Awake()
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
     public void TakingDamage(int damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
+        playerAudio.GetComponent<PlayerAudio>().playDamageSound();
 
         if (currentHealth > 0)
         {
@@ -39,6 +41,7 @@ public class Health : MonoBehaviour
                 GetComponent<PlayerMechanic>().enabled = false;
                 gameOverScreen.ShowGameOverScreen();
                 dead = true;
+                playerAudio.GetComponent<PlayerAudio>().playDeathSound();
             }
         }
     }

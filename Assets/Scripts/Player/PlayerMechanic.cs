@@ -12,6 +12,7 @@ public class PlayerMechanic : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     private int jumpCounter;
     private bool isGrounded;
+    private bool isWalking = false;
     public GameObject playerAudio;
 
     void Update()
@@ -19,19 +20,35 @@ public class PlayerMechanic : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         
         playerRigidBody.velocity = new Vector2(horizontalInput * playerMoveSpeed, playerRigidBody.velocity.y);
-        
+        isWalking = false;
         if (horizontalInput > 0.01f)
         {
+            isWalking = true;
             transform.localScale = Vector3.one;
+            if (!playerAudio.GetComponent<PlayerAudio>().FootstepSound.isPlaying && isGrounded) {
+                playerAudio.GetComponent<PlayerAudio>().playFootstepSound();
+            }
         }
         else if (horizontalInput < -0.01f)
         {
+            isWalking = true;
             transform.localScale = new Vector3(-1, 1, 1);
+            if (!playerAudio.GetComponent<PlayerAudio>().FootstepSound.isPlaying && isGrounded) {
+                playerAudio.GetComponent<PlayerAudio>().playFootstepSound();
+            }
+        }
+
+        if (!isWalking) {
+            playerAudio.GetComponent<PlayerAudio>().stopFootstepSound();
         }
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            if (isGrounded) {
+                Jump();
+            } else {
+                DoubleJump();
+            }
         }
 
         playerAnimator.SetBool("Run", horizontalInput != 0);
@@ -48,6 +65,7 @@ public class PlayerMechanic : MonoBehaviour
     private void DoubleJump()
     {
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight / 0.5f);
+        playerAudio.GetComponent<PlayerAudio>().playDoubleJumpSound();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -55,6 +73,14 @@ public class PlayerMechanic : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
         }
     }
 
