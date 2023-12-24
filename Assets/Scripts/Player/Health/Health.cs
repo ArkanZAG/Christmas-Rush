@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int numberofFlashes;
     [SerializeField] private int iFramesDuration;
     [SerializeField] private float currentHealth;
+    [SerializeField] private GameOverScreen gameOverScreen;
     private SpriteRenderer spriteRend;
     private bool dead;
     
@@ -35,7 +36,8 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 playerAnimator.SetTrigger("Dead");
-                GetComponent<PlayerMechanic>().enabled = false; 
+                GetComponent<PlayerMechanic>().enabled = false;
+                gameOverScreen.ShowGameOverScreen();
                 dead = true;
             }
         }
