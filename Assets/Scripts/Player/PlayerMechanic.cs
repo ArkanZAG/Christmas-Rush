@@ -12,6 +12,7 @@ public class PlayerMechanic : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     private int jumpCounter;
     private bool isGrounded;
+    public GameObject playerAudio;
 
     void Update()
     {
@@ -41,6 +42,7 @@ public class PlayerMechanic : MonoBehaviour
     {
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerJumpHeight);
         isGrounded = false;
+        playerAudio.GetComponent<PlayerAudio>().playJumpSound();
     }
 
     private void DoubleJump()
