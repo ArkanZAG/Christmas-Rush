@@ -22,39 +22,27 @@ public class VictoryScreen : MonoBehaviour
         mainMenuButton.onClick.AddListener(LoadMainMenuScreen);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-        {
-            VictoryCondition();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.CompareTag("Player"))
+    //     {
+    //         VictoryCondition();
+    //     }
+    // }
 
     // public void VictoryCondition()
     // {
     //     Debug.Log("Menang!");
-    //     int counterValue = int.Parse(inGameMenu.GetCounterText().text);
-    //     if (counterValue == 6)
+    //     TextMeshProUGUI counter = inGameMenu.GetCounterText();
+    //     int counterValue;
+    //     if (int.TryParse(counter.text, out counterValue))
     //     {
-    //         ShowVitoryScreen();
+    //         if (counterValue == 6)
+    //         {
+    //             ShowVitoryScreen();
+    //         }
     //     }
-    //     
     // }
-    
-    public void VictoryCondition()
-    {
-        Debug.Log("Menang!");
-        TextMeshProUGUI counter = inGameMenu.GetCounterText();
-        int counterValue;
-        if (int.TryParse(counter.text, out counterValue))
-        {
-            if (counterValue == 6)
-            {
-                ShowVitoryScreen();
-            }
-        }
-        
-    }
 
     public void ShowVitoryScreen()
     {

@@ -1179,6 +1179,10 @@ PrefabInstance:
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 1335077037}
+    - target: {fileID: 4562803069252637100, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
+      propertyPath: victoryScreen
+      value: 
+      objectReference: {fileID: 328739867}
     - target: {fileID: 4963545554094738521, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -3995,6 +3999,10 @@ PrefabInstance:
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 1335077037}
+    - target: {fileID: 4562803069252637100, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
+      propertyPath: victoryScreen
+      value: 
+      objectReference: {fileID: 328739867}
     - target: {fileID: 4963545554094738521, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -4429,6 +4437,10 @@ PrefabInstance:
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 1335077037}
+    - target: {fileID: 4562803069252637100, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
+      propertyPath: victoryScreen
+      value: 
+      objectReference: {fileID: 328739867}
     - target: {fileID: 4963545554094738521, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -6749,6 +6761,10 @@ PrefabInstance:
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 1335077037}
+    - target: {fileID: 4562803069252637100, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
+      propertyPath: victoryScreen
+      value: 
+      objectReference: {fileID: 328739867}
     - target: {fileID: 4963545554094738521, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -9013,6 +9029,10 @@ PrefabInstance:
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 1335077037}
+    - target: {fileID: 4562803069252637100, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
+      propertyPath: victoryScreen
+      value: 
+      objectReference: {fileID: 328739867}
     - target: {fileID: 4963545554094738521, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -10118,6 +10138,10 @@ PrefabInstance:
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 1335077037}
+    - target: {fileID: 4562803069252637100, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
+      propertyPath: victoryScreen
+      value: 
+      objectReference: {fileID: 328739867}
     - target: {fileID: 4963545554094738521, guid: 3a1a1959e8772dc4fbafd5adbb8e1c2f, type: 3}
       propertyPath: m_SortingOrder
       value: 10
