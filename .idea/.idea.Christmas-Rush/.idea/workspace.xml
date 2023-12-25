@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486653a4-0423-4981-beb8-ffddca1b60de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible/ScoreController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible/ScoreController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Christmas-Rush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Christmas-Rush/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CollectibleHealth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CollectibleHealth.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CollectiblePresent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CollectiblePresent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FragilePlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FragilePlatform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collectible/CollectibleItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible/CollectibleItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Environment/FragilePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Environment/FragilePlatform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Hostile Enemy/EnemyDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Hostile Enemy/EnemyDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameMenu/InGameMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameMenu/InGameMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Health/HealtHealing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Health/HealtHealing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Health/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Health/HealthComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Health/Health.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Health/HealthComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Health/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Health/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMechanic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMechanic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Victory/VictoryScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Victory/VictoryScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="486653a4-0423-4981-beb8-ffddca1b60de" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,9 +22,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameMenu/InGameMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Health/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Health/HealthComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://E:/Projectss/Christmas-Rush/Assets/Scripts/Player/PlayerMechanic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Projectss/Christmas-Rush/Assets/Scripts/Player/PlayerMechanic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Victory/VictoryScreen.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -70,9 +48,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\Arya Rakha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Arya Rakha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Arya Rakha\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Arkan Zahrawaani\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Arkan Zahrawaani\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Arkan Zahrawaani\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -146,6 +124,7 @@
       <workItem from="1703379825200" duration="4284000" />
       <workItem from="1703390375867" duration="493000" />
       <workItem from="1703404434687" duration="6145000" />
+      <workItem from="1703419877439" duration="102000" />
     </task>
     <servers />
   </component>
